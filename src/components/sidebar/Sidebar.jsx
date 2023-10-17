@@ -14,14 +14,17 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import logo from "../../assets/logo.svg"
+
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="top">
+      <img src={logo} alt="logo" className="h-12 w-12"/>
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">lamadmin</span>
+          <div className="logo">XpiREminder</div>
         </Link>
       </div>
       <hr />

@@ -19,13 +19,16 @@
     border-color: #333;
 
     .search {
-      border-color: gray;
+      border: 1px solid #3b3a3a;
     }
   }
 
   .sidebar {
     background-color: #111;
-    border-color: #333;
+    border: none;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
 
     .top {
       .logo {
@@ -38,6 +41,9 @@
 
     ul {
       li {
+        span{
+          color:white;
+        }
         &:hover {
           background-color: #333;
         }
@@ -53,6 +59,14 @@
     .datagrid {
       color: gray;
       border: none;
+      .MuiDataGrid-cell {
+        border: none; /* Light gray border */
+      }
+      
+      /* Optional: Remove the outer borders */
+      .MuiDataGrid-row:first-child {
+        border: none;
+      }
 
       .viewButton,
       .deleteButton,
@@ -66,4 +80,22 @@
   input{
       background-color: transparent;
   }
+  .homeContainer{
+    background-color: #111;
+  }
+  .widget,.featured,.chart,.listContainer{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  .table {
+    border-collapse: collapse;
+
+    .tableCell, .tr {
+      border-bottom: none; /* Light gray border */
+    }
+   
+  }
+  
+  
+  
+  
 }

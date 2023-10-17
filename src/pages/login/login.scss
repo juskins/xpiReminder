@@ -1,3 +1,132 @@
-.login{
-    
+span{
+     color:red;
+     font-size: 14px;
+     font-weight: bold;
+     align-self: flex-end;
 }
+
+// /* Login.scss */
+
+// .login-container {
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//      height: 100vh;
+//      width: 100%;
+//      border-radius: 10px;
+//      background-color:#f0f0ff;
+
+
+//      // width: 80%;
+//    }
+   
+//    .login-image {
+//      display: flex;
+//      justify-content: center;
+//      align-items: center;
+//      height: 100%;
+//      flex-basis: 50%;
+//      position: relative;
+   
+//      img {
+//        max-width: 100%;
+//        height: 100%;
+//        object-fit: cover;
+//        object-position: center;
+//        opacity: 1;
+//       //  filter: blur(1px);
+//      }
+//      &::before {
+//           content: '';
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           width: 100%;
+//           height: 100%;
+//           background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
+//           z-index: 1;
+//         }
+//    }
+   
+//    .login-form {
+//      padding:0px 30px;
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//      border: 1px solid #ccc;
+//      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//      background-color: #fff;
+//      height: 100%;
+//      flex-basis: 50%;
+//      border-top-right-radius: 10px;
+//      border-bottom-right-radius: 10px;
+   
+//      h1 {
+//        font-size: 24px;
+//        margin-bottom: 10px;
+//      }
+   
+//      p {
+//        font-size: 14px;
+//        color: #666;
+//        margin-bottom: 20px;
+//      }
+   
+//      .form-group {
+//        margin-bottom: 20px;
+   
+//        label {
+//          display: block;
+//          font-size: 14px;
+//          margin-bottom: 5px;
+//          color: #333;
+//        }
+   
+//        input {
+//          width: 80%;
+//          padding: 10px;
+//          border: 1px solid #ccc;
+//          border-radius: 5px;
+//        }
+//      }
+   
+//      .login-button {
+//        width: 85%;
+//        padding: 10px;
+//        background-color: #0074cc;
+//        color: #fff;
+//        border: none;
+//        border-radius: 5px;
+//        font-size: 16px;
+//        cursor: pointer;
+//      }
+   
+//      .register-link {
+//        font-size: 14px;
+//        margin-top: 10px;
+//        text-align: center;
+   
+//        a {
+//          color: #0074cc;
+//          text-decoration: none;
+//        }
+//      }
+   
+//      .google-auth {
+//        margin-top: 20px;
+//        text-align: center;
+   
+//        p {
+//          font-size: 14px;
+//          color: #666;
+//        }
+   
+//        a img {
+//          width: 32px;
+//          height: 32px;
+//          margin: 10px;
+//          cursor: pointer;
+//        }
+//      }
+//    }
+   

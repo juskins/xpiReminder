@@ -1,11 +1,15 @@
 .datatable {
   height: 600px;
   padding: 20px;
+
+  .datagrid{
+    overflow: hidden;
+  }
   
   .datatableTitle{
     width: 100%;
     font-size: 24px;
-    color: gray;
+    color: #131a4e;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -13,13 +17,16 @@
 
     .link{
       text-decoration: none;
-      color: green;
+      background-color: #E95420;
+      color:white;
       font-size: 16px;
       font-weight: 400;
-      border: 1px solid green;
-      padding: 5px;
+      padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      &:hover{
+        background-color: #131a4e;
+      }
     }
   }
 

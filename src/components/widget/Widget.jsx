@@ -7,17 +7,19 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 
 const Widget = ({ type }) => {
   let data;
+  let widgetClass;
 
   //temporary
-  const amount = 100;
+  const amount = 103;
   const diff = 20;
 
   switch (type) {
     case "user":
+      
       data = {
-        title: "USERS",
+        title: "Expiring in 7 days",
         isMoney: false,
-        link: "See all users",
+        link: "See all",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -28,12 +30,13 @@ const Widget = ({ type }) => {
           />
         ),
       };
+      widgetClass = "user-widget";
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "Expiring this month",
         isMoney: false,
-        link: "View all orders",
+        link: "View all",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -44,12 +47,13 @@ const Widget = ({ type }) => {
           />
         ),
       };
+      widgetClass = "order-widget";
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "Expired Already",
         isMoney: true,
-        link: "View net earnings",
+        link: "View all",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -57,10 +61,11 @@ const Widget = ({ type }) => {
           />
         ),
       };
+      widgetClass = "earning-widget";
       break;
     case "balance":
       data = {
-        title: "BALANCE",
+        title: "Total Products",
         isMoney: true,
         link: "See details",
         icon: (
@@ -73,19 +78,20 @@ const Widget = ({ type }) => {
           />
         ),
       };
+      widgetClass = "balance-widget";
       break;
     default:
       break;
   }
 
   return (
-    <div className="widget">
+    <div className={`widget ${widgetClass}`}>
       <div className="left">
-        <span className="title">{data.title}</span>
-        <span className="counter">
-          {data.isMoney && "$"} {amount}
-        </span>
-        <span className="link">{data.link}</span>
+        <div className="title">{data.title}</div>
+        <div className="counter">
+          {amount}
+        </div>
+        <div className="link">{data.link}</div>
       </div>
       <div className="right">
         <div className="percentage positive">

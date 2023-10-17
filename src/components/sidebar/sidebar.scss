@@ -1,8 +1,7 @@
 .sidebar {
   flex: 1;
-  border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  background-color: white;
+  background-color: #E95420;
 
   .top {
     height: 50px;
@@ -11,9 +10,9 @@
     justify-content: center;
 
     .logo {
-      font-size: 20px;
+      // font-size: 20px;
       font-weight: bold;
-      color: #6439ff;
+      color: #FBF2EF;
     }
   }
 
@@ -33,7 +32,7 @@
       .title {
         font-size: 10px;
         font-weight: bold;
-        color: #999;
+        color: #333;
         margin-top: 15px;
         margin-bottom: 5px;
       }
@@ -42,22 +41,37 @@
         display: flex;
         align-items: center;
         padding: 5px;
+        max-width:160px;
         cursor: pointer;
+        pointer-events: fill;
+        transition: background-color 0.3s, color 0.3s;
 
         &:hover {
-          background-color: #ece8ff;
+          background-color: #FBF2EF;
+          border-radius: 3px;
+          color: #E95420;
+          font-weight: 700;
+          .icon,
+           span {
+          color: #E95420; /* Change the text color for all child elements */
+          font-weight: 700;
+      }
+          
         }
 
         .icon {
           font-size: 18px;
-          color: #7451f8;
+          color: #FBF2EF;
+          transition: color 0.3s;
+         
         }
 
         span{
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            color: #888;
+            color: #FBF2EF;
             margin-left: 10px;
+            transition: color 0.3s; /* Add transition for the text */
         }
       }
     }
