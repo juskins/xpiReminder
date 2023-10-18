@@ -1,6 +1,7 @@
 import "./login.scss";
 import loginImage from "../../assets/supermarket.jpg"
 import googleImg from "../../assets/icons8-google.svg"
+import { Link } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 import React , {useState} from 'react';
 // Import your CSS file for styling
@@ -78,7 +79,7 @@ function Login() {
         </div>
 
         <div className="w-full flex items-center justify-center">
-          <p className="text-sm font-normal text-[darkBlue]">Don't have an account? <span className="underline font-semibold hover:text-[#FF7F00] cursor-pointer underline-offset-2">Sign up for free</span></p>
+          <p className="text-sm font-normal text-[darkBlue]">Don't have an account? <Link to='/signup'><span className="underline font-semibold hover:text-[#FF7F00] cursor-pointer underline-offset-2">Sign up for free</span></Link></p>
         </div>
         
         
