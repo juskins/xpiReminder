@@ -6,6 +6,7 @@ import Featured from "../../components/featured/Featured";
 import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
 import DonutChart from "../../components/donutChart/Donutchart";
+import HistogramChart from "../../components/barchart/Barchart";
 
 const Home = () => {
   return (
@@ -14,15 +15,15 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="widgets">
-          <Widget type="user"/>
-          <Widget type="order" />
-          <Widget type="earning" />
-          <Widget type="balance" />
+          <Widget type="exp_7"/>
+          <Widget type="exp_mnth" />
+          <Widget type="expired" />
+          <Widget type="total_prod" />
         </div>
         <div className="charts">
-          {/* <Featured /> */}
           <DonutChart/>
           <Chart title="Last 6 Months (Products expired)" aspect={2 / 1} />
+
         </div>
         <div className="listContainer">
           <div className="listTitle">Products Expiring Soon (Top 10)</div>

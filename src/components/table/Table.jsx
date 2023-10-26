@@ -16,7 +16,7 @@ const List = () => {
       qty:16,
       img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
       exp_date: "11-03-2020",
-      days_exp: 34,
+      days_exp: 2,
       status: "Active",
     },
     {
@@ -26,7 +26,7 @@ const List = () => {
       qty:56,
       img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
       exp_date: "2-05-2023",
-      days_exp: 2,
+      days_exp: 5,
       status: "Pending",
     },
     {
@@ -35,8 +35,8 @@ const List = () => {
       batch_No:'121',
       qty:12,
       img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
-      exp_date: "10-11-2024",
-      days_exp: 35,
+      exp_date: "10-11-2023",
+      days_exp: 10,
       status: "Expired",
     },
     {
@@ -45,7 +45,7 @@ const List = () => {
       batch_No:'121',
       qty:3,
       img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-      exp_date: "10-05-2023",
+      exp_date: "10-12-2023",
       days_exp: 45,
       status: "Active",
     },
@@ -55,7 +55,7 @@ const List = () => {
       batch_No:'121',
       qty:6,
       img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      exp_date: "1-01-2025",
+      exp_date: "21-12-2023",
       days_exp: 100,
       status: "Pending",
     },
@@ -70,7 +70,7 @@ const List = () => {
             <TableCell className="tableCell">Batch No</TableCell>
             <TableCell className="tableCell">Quantity</TableCell>
             <TableCell className="tableCell">Expiry Date</TableCell>
-            <TableCell className="tableCell">Days to expiry</TableCell>
+            <TableCell className="tableCell"><b>Days to expiry</b></TableCell>
             <TableCell className="tableCell">Status</TableCell>
           </TableRow>
         </TableHead>
@@ -87,7 +87,7 @@ const List = () => {
               <TableCell className="tableCell">{row.batch_No}</TableCell>
               <TableCell className="tableCell">{row.qty}</TableCell>
               <TableCell className="tableCell">{row.exp_date}</TableCell>
-              <TableCell className="tableCell">{row.days_exp}</TableCell>
+              <TableCell className="tableCell"><b>{row.days_exp}</b></TableCell>
               <TableCell className="tableCell">
                 <span className={`status ${row.status}`}>{row.status}</span>
               </TableCell>

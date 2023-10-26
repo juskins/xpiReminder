@@ -29,8 +29,8 @@ const NotificationList = ({ isVisible, toggleVisibility }) => {
                   variant="body2"
                   color="text.primary"
                 >
-                  <h3 style={{fontWeight:'700'}}>- Quantity: 20</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 120</h3>
+                  <p style={{fontWeight:'700'}}>- Quantity: 20</p>
+                  <p style={{fontWeight:'700'}}>- Batch No: 120</p>
 
                 </Typography>
                 <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>2 mins ago</small>

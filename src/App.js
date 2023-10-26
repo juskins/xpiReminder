@@ -10,6 +10,7 @@ import "./style/dark.scss";
 import "./index"
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -39,6 +40,8 @@ function App() {
               />
             </Route>
           </Route>
+          <Route path="profile" element={<Profile />} />
+
         </Routes>
       </BrowserRouter>
     </div>

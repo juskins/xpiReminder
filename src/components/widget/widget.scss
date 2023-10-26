@@ -1,21 +1,21 @@
- /* User Widget */
- .user-widget {
+ /* expiring in 7 days Widget */
+ .exp-seven {
   background-color: blue;
 }
 
-/* Order Widget */
-.order-widget {
+/* exp in a month Widget */
+.exp-month {
   background-color: green;
 }
 
-/* Earning Widget */
-.earning-widget {
+/* Expired already Widget */
+.expired {
   background-color:darkred ;
 }
 
-/* Balance Widget */
-.balance-widget {
-  background-color: orangered;
+/* Total prod Widget */
+.total-prod {
+  background-color: salmon;
 }
 .widget {
   display: flex;

@@ -14,7 +14,7 @@ const Widget = ({ type }) => {
   const diff = 20;
 
   switch (type) {
-    case "user":
+    case "exp_7":
       
       data = {
         title: "Expiring in 7 days",
@@ -30,9 +30,9 @@ const Widget = ({ type }) => {
           />
         ),
       };
-      widgetClass = "user-widget";
+      widgetClass = "exp-seven";
       break;
-    case "order":
+    case "exp_mnth":
       data = {
         title: "Expiring this month",
         isMoney: false,
@@ -47,9 +47,9 @@ const Widget = ({ type }) => {
           />
         ),
       };
-      widgetClass = "order-widget";
+      widgetClass = "exp-month";
       break;
-    case "earning":
+    case "expired":
       data = {
         title: "Expired Already",
         isMoney: true,
@@ -61,9 +61,9 @@ const Widget = ({ type }) => {
           />
         ),
       };
-      widgetClass = "earning-widget";
+      widgetClass = "expired";
       break;
-    case "balance":
+    case "total_prod":
       data = {
         title: "Total Products",
         isMoney: true,
@@ -78,7 +78,7 @@ const Widget = ({ type }) => {
           />
         ),
       };
-      widgetClass = "balance-widget";
+      widgetClass = "total-prod";
       break;
     default:
       break;

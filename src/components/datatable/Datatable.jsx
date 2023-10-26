@@ -4,10 +4,20 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
+import ProductModal from "../newProductModal/NewProducts";
 
 const Datatable = () => {
   const [data, setData] = useState(userRows);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -39,9 +49,13 @@ const Datatable = () => {
     <div className="datatable">
       <div className="datatableTitle">
         Add New User
-        <Link to="/users/new" className="link">
+        <button onClick={handleOpenModal} className='link'>
+          Add Product
+        </button>
+      <ProductModal open={modalOpen} onClose={handleCloseModal} />
+        {/* <Link to="/products/new" className="link">
           Add New
-        </Link>
+        </Link> */}
       </div>
       <DataGrid
         className="datagrid"
