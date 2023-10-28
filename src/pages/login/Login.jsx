@@ -1,8 +1,8 @@
 import "./login.scss";
 import loginImage from "../../assets/supermarket.jpg"
-import googleImg from "../../assets/icons8-google.svg"
+//import googleImg from "../../assets/icons8-google.svg"
 import { Link } from "react-router-dom"
-import logo from "../../assets/logo.svg"
+//import logo from "../../assets/logo.svg"
 import React , {useState} from 'react';
 // Import your CSS file for styling
 
@@ -24,7 +24,7 @@ function Login() {
           <p className="text-xl text-[#f5f5f5]  font-normal">We understand that keeping track of product lifespans can be challenging, but with expiReminder, you're in control.
           Say goodbye to wasted groceries and expired goods. It's time to start your journey towards a smarter, more organized life. </p>
         </div>
-        <img src={loginImage} alt="Login" className="w-full h-full object-cover"/>
+      <img src={loginImage} alt="Login" className="w-full h-full object-cover"/>
       </div>
 
       {/* Login Form */}
@@ -73,7 +73,7 @@ function Login() {
           </div>
 
           <div className="w-full my-2 bg-[white] flex items-center justify-center rounded-md p-4 hover:text-[#FF7F00] text-center font-semibold border border-[darkBlue]/10 text-[darkBlue] cursor-pointer">
-            <img src={googleImg} alt="google-icon" className="mr-2 h-6"/>
+           {/* <img src={googleImg} alt="google-icon" className="mr-2 h-6"/>*/}
             Sign In with google</div>
           
         </div>

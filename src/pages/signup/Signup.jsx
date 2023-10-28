@@ -1,5 +1,5 @@
 import "./signup.scss";
-import logo from "../../assets/logo.svg"
+//import logo from "../../assets/logo.svg"
 import React, {useState} from 'react'
 
 const Signup = () => {
