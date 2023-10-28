@@ -2,7 +2,7 @@ import "./login.scss";
 import loginImage from "../../assets/supermarket.jpg"
 import googleImg from "../../assets/icons8-google.svg"
 import { Link } from "react-router-dom"
-//import logo from "../../assets/logo.svg"
+import logo from "../../assets/logo.svg"
 import React , {useState} from 'react';
 // Import your CSS file for styling
 
