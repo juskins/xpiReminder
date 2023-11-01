@@ -2,11 +2,11 @@
   height: 600px;
   padding: 20px;
 
-  .datagrid{
+  .datagrid {
     overflow: hidden;
   }
-  
-  .datatableTitle{
+
+  .datatableTitle {
     width: 100%;
     font-size: 24px;
     color: #131a4e;
@@ -15,19 +15,18 @@
     align-items: center;
     justify-content: space-between;
 
-    .link{
+    .link {
       text-decoration: none;
       background-color: #131a4e;
-      color:white;
+      color: white;
       font-size: 16px;
       font-weight: 400;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
-      &:hover{
-        background-color:#131a4ecc ;
+      &:hover {
+        background-color: #131a4ecc;
       }
-     
     }
   }
 
@@ -49,16 +48,16 @@
     border-radius: 5px;
 
     &.active {
-      background-color: rgba(0, 128, 0, 0.05);
-      color: green;
+      background-color: #e0fff0;
+      color: black;
     }
     &.pending {
-      background-color: rgba(255, 217, 0, 0.05);
-      color: goldenrod;
+      background-color: #fdfdd6;
+      color: black;
     }
-    &.passive {
-      background-color: rgba(255, 0, 0, 0.05);
-      color: crimson;
+    &.expired {
+      background-color: #ffdcdc;
+      color: black;
     }
   }
 
@@ -74,7 +73,7 @@
       border: 1px dotted rgba(0, 0, 139, 0.596);
       cursor: pointer;
     }
-    
+
     .deleteButton {
       padding: 2px 5px;
       border-radius: 5px;
