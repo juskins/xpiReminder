@@ -11,6 +11,7 @@ import "./index"
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import Profile from "./pages/profile/Profile";
+import { Notifications } from "./components/notifications/Notifications";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -41,7 +42,7 @@ function App() {
             </Route>
           </Route>
           <Route path="profile" element={<Profile />} />
-
+          <Route path="notifications" element={<Notifications/>} />
         </Routes>
       </BrowserRouter>
     </div>

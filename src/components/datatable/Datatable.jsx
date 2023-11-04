@@ -77,7 +77,7 @@ const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        Add New Product
         <button onClick={handleOpenModal} className="link">
           Add Product
         </button>

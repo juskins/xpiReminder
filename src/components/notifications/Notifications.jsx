@@ -1,171 +1,54 @@
-// NotificationList.js
-import React from 'react';
-import './notifications.scss'; // Add CSS for styling
+import React from "react";
+import "./notification.scss";
+import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/navbar/Navbar";
+import StarIcon from "@mui/icons-material/Star";
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Divider from '@mui/material/Divider';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-
-const NotificationList = ({ isVisible, toggleVisibility }) => {
+export const Notifications = () => {
   return (
-    <div className={`notification-list ${isVisible ? 'visible' : ''}`}>
-     <p>Notifications</p>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Gino Tomato has Expired"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <p style={{fontWeight:'700'}}>- Quantity: 20</p>
-                  <p style={{fontWeight:'700'}}>- Batch No: 120</p>
+    <div className="notify">
+      <Sidebar />
+      <div className="newContainer">
+        <Navbar />
+        <div className="top">
+          <h1>Notification</h1>
+          <div className="flex">
+            <p>You have 3 unread notifications</p>
+            <button>Mark all as read</button>
+          </div>
+        </div>
 
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>2 mins ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
+        <div className="bottom">
+          <div className="all">
+            <p>All</p>
+            <p>New</p>
+            <p>Unread</p>
+          </div>
 
-        <Divider variant="inset" component="li"/>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Bournvita 5ml"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <h3 style={{fontWeight:'700'}}>- Quantity: 5</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 020</h3>
-
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>20 mins ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-
-        <Divider variant="inset" component="li" />
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Golden Penny noodles"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <h3 style={{fontWeight:'700'}}>- Quantity: 200</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 90</h3>
-
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>1 hr ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-
-        <Divider variant="inset" component="li" />
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Munch it"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <h3 style={{fontWeight:'700'}}>- Quantity: 50</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 1120</h3>
-
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>2 hrs ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-
-        <Divider variant="inset" component="li" />
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Oui Oui"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                   <h3 style={{fontWeight:'700'}}>- Quantity: 20</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 120</h3>
-
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>2 mins ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-
-        <Divider variant="inset" component="li" />
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Oui Oui"
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <h3 style={{fontWeight:'700'}}>- Quantity: 20</h3>
-                  <h3 style={{fontWeight:'700'}}>- Batch No: 120</h3>
-
-                </Typography>
-                <small style={{fontWeight:'500', color:'darkblue',float:'right'}}>2 mins ago</small>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
-      </List>
+          <div className="alerts">
+            <div className="alert">
+              <div className="first">
+                <div className="logo">
+                  <StarIcon />
+                </div>
+                <div>
+                  <p>You have 3 days to the expiration of Beer - Blue </p>
+                  <div className="group">
+                    <small>
+                      <b>Batch No: 121</b>
+                    </small>
+                    <small>Quantity: 20</small>
+                  </div>
+                </div>
+              </div>
+              <div className="last">
+                <div>24/09/2023</div>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
-
-export default NotificationList;
