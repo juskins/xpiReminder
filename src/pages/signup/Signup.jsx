@@ -2,10 +2,13 @@ import "./signup.scss";
 import logo from "../../assets/logo.svg";
 import React, { useState, useRef, useEffect } from "react";
 import { FaCheck, FaTimes, FaInfoCircle } from "react-icons/fa";
+import axios from "axios"
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+const REGISTER_URL = 'https://xpiremider.onrender.com/api/auth/signup';
+
 
 const Signup = () => {
   const userFirstNameRef = useRef();
@@ -90,8 +93,35 @@ const Signup = () => {
       setErrMsg("Invalid Entry");
       return;
     }
-    console.log(userFirstName, userLastName, email, shopName, pwd);
+   try {
+    const response = await axios.post(
+REGISTER_URL,JSON.stringify({
+  firstname: userFirstName,
+  lastname: userLastName,
+  password: pwd,
+  email: email,
+  shop_name:shopName
+
+}),
+{
+  headers: { 'Content-Type': 'application/json' },
+
+}
+    )
+    console.log(response?.data);
+    console.log(response?.accessToken);
+    console.log(JSON.stringify(response))
     setSuccess(true);
+   } catch (err) {
+    if (!err?.response) {
+      setErrMsg('No Server Response');
+  } else if (err.response?.status === 409) {
+      setErrMsg('Username Taken');
+  } else {
+      setErrMsg('Registration Failed')
+  }
+  errRef.current.focus();
+   }
   };
 
   return (
