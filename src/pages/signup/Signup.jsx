@@ -5,6 +5,8 @@ import { FaCheck, FaTimes, FaInfoCircle } from "react-icons/fa";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
 
 const Signup = () => {
   const userFirstNameRef = useRef();
@@ -53,8 +55,7 @@ const Signup = () => {
   }, [userLastName]);
 
   useEffect(() => {
-    const result = USER_REGEX.test(shopName);
-    console.log(result);
+    
     console.log(shopName);
     setValidLastName(result);
   }, [shopName]);
@@ -67,8 +68,15 @@ const Signup = () => {
   }, [pwd]);
 
   useEffect(() => {
+    const result = EMAIL_REGEX.test(email);
+    console.log(result);
+    console.loge(email);
+    setValidEmail(result);
+  }, [email]);
+
+  useEffect(() => {
     setErrMsg("");
-  }, [userFirstName, pwd, userLastName,shopName]);
+  }, [userFirstName, pwd, userLastName,shopName,email]);
 
   return (
     <div className="body">
