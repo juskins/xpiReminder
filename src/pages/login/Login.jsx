@@ -35,9 +35,9 @@ const Login = () => {
             );
             console.log(JSON.stringify(response?.data));
             console.log(JSON.stringify(response));
-           
+            const accessToken = response?.data?.token;
             
-            setAuth({ email,pwd });
+            setAuth({ email,pwd , accessToken });
             setEmail('');
             setPwd('');
             setSuccess(true);
