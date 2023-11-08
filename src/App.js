@@ -12,7 +12,8 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import Profile from "./pages/profile/Profile";
 import { Notifications } from "./components/notifications/Notifications";
-
+import Layout from "./layout/Layout";
+import RequireAuth from "./components/RequiredAuth";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -20,7 +21,8 @@ function App() {
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
+          <Route path="/" element={<Layout/>}>
+            
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -41,7 +43,10 @@ function App() {
               />
             </Route>
           </Route>
+          <Route element={<RequireAuth/>}>
           <Route path="profile" element={<Profile />} />
+
+          </Route>
           <Route path="notifications" element={<Notifications/>} />
         </Routes>
       </BrowserRouter>

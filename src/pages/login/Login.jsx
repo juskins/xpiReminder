@@ -1,25 +1,30 @@
-import { useRef, useState, useEffect, useContext } from 'react';
-import AuthContext from "../../context/AuthProvider";
+import { useRef, useState, useEffect} from 'react';
+import useAuth from '../../hooks/useAuth';
 import "./login.scss";
 import loginImage from "../../assets/supermarket.jpg"
 
-import { Link } from "react-router-dom"
+import { Link,useNavigate,useLocation } from "react-router-dom"
 import logo from "../../assets/logo.svg"
 import React  from 'react';
-// Import your CSS file for styling
+
 
 import axios from 'axios'
 const LOGIN_URL = 'https://xpiremider.onrender.com/api/auth/login';
 
 const Login = () => {
-    const { setAuth } = useContext(AuthContext);
+    const { setAuth } = useAuth();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = window.location.state?.from?.pathname || "/";
+
     const emailRef = useRef();
     const errRef = useRef();
 
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+    
 
     useEffect(() => {
         emailRef.current.focus();
@@ -47,7 +52,8 @@ const Login = () => {
             setAuth({ email,pwd , accessToken });
             setEmail('');
             setPwd('');
-            setSuccess(true);
+           
+            navigate(from,{replace:true});
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -63,16 +69,8 @@ const Login = () => {
     }
 
     return (
-        <>
-            {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>
-                        <a href="#">Go to Home</a>
-                    </p>
-                </section>
-            ) : (
+        
+           
                 <div className="w-full h-screen flex item-start">
                 <div className="relative w-1/2 h-full flex flex-col">
                   <div className="absolute top-[25%] left-[10%] flex flex-col">
@@ -148,8 +146,8 @@ const Login = () => {
                 </form>
               </div>
               
-            )}
-        </>
+            
+        
     )
 }
 
