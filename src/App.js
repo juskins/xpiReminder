@@ -21,8 +21,7 @@ function App() {
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout/>}>
-            
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -43,11 +42,12 @@ function App() {
               />
             </Route>
           </Route>
-          <Route element={<RequireAuth/>}>
+          <Route element={<RequireAuth />}>
+            <Route path="logout" element={<Profile />} />
+          </Route>
           <Route path="profile" element={<Profile />} />
 
-          </Route>
-          <Route path="notifications" element={<Notifications/>} />
+          <Route path="notifications" element={<Notifications />} />
         </Routes>
       </BrowserRouter>
     </div>

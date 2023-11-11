@@ -37,7 +37,84 @@ export const Notifications = () => {
                     <small>
                       <b>Batch No: 121</b>
                     </small>
-                    <small>Quantity: 20</small>
+                    <small>
+                      <b>Quantity: 20</b>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div className="last">
+                <div>24/09/2023</div>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="alerts">
+            <div className="alert">
+              <div className="first">
+                <div className="logo">
+                  <StarIcon />
+                </div>
+                <div>
+                  <p>You have 3 days to the expiration of Beer - Blue </p>
+                  <div className="group">
+                    <small>
+                      <b>Batch No: 121</b>
+                    </small>
+                    <small>
+                      <b>Quantity: 20</b>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div className="last">
+                <div>24/09/2023</div>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="alerts">
+            <div className="alert">
+              <div className="first">
+                <div className="logo">
+                  <StarIcon />
+                </div>
+                <div>
+                  <p>You have 3 days to the expiration of Beer - Blue </p>
+                  <div className="group">
+                    <small>
+                      <b>Batch No: 121</b>
+                    </small>
+                    <small>
+                      <b>Quantity: 20</b>
+                    </small>
+                  </div>
+                </div>
+              </div>
+              <div className="last">
+                <div>24/09/2023</div>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="alerts">
+            <div className="alert">
+              <div className="first">
+                <div className="logo">
+                  <StarIcon />
+                </div>
+                <div>
+                  <p>You have 3 days to the expiration of Beer - Blue </p>
+                  <div className="group">
+                    <small>
+                      <b>Batch No: 121</b>
+                    </small>
+                    <small>
+                      <b>Quantity: 20</b>
+                    </small>
                   </div>
                 </div>
               </div>
