@@ -1,144 +1,8 @@
-export const userColumns = [
-  { field: "id", headerName: "ID", width: 70 },
+const axios = require("axios");
+// import { userRows } from "../datatablesource"
+const userRows = [
   {
-    field: "name",
-    headerName: "Name",
-    width: 230,
-    // renderCell: (params) => {
-    //   return (
-    //     <div className="cellWithImg">
-    //       <img className="cellImg" src={params.row.img} alt="avatar" />
-    //       {params.row.username}
-    //     </div>
-    //   );
-    // },
-  },
-  {
-    field: "batch",
-    headerName: "Batch",
-    width: 230,
-  },
-  {
-    field: "quantity",
-    headerName: "Quantity",
-    width: 160,
-  },
-  {
-    field: "price",
-    headerName: "Price",
-    width: 160,
-  },
-  {
-    field: "productionDate",
-    headerName: "Production Date",
-    width: 160,
-  },
-  {
-    field: "expiry",
-    headerName: "Expiry date",
-    width: 100,
-  },
-  {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
-  },
-];
-
-//temporary data
-// export const userRows = [
-//   {
-//     id: 1,
-//     username: "Snow",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     status: "active",
-//     email: "1snow@gmail.com",
-//     age: 35,
-//   },
-//   {
-//     id: 2,
-//     username: "Jamie Lannister",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "2snow@gmail.com",
-//     status: "passive",
-//     age: 42,
-//   },
-//   {
-//     id: 3,
-//     username: "Lannister",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "3snow@gmail.com",
-//     status: "pending",
-//     age: 45,
-//   },
-//   {
-//     id: 4,
-//     username: "Stark",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "4snow@gmail.com",
-//     status: "active",
-//     age: 16,
-//   },
-//   {
-//     id: 5,
-//     username: "Targaryen",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "5snow@gmail.com",
-//     status: "passive",
-//     age: 22,
-//   },
-//   {
-//     id: 6,
-//     username: "Melisandre",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "6snow@gmail.com",
-//     status: "active",
-//     age: 15,
-//   },
-//   {
-//     id: 7,
-//     username: "Clifford",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "7snow@gmail.com",
-//     status: "passive",
-//     age: 44,
-//   },
-//   {
-//     id: 8,
-//     username: "Frances",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "8snow@gmail.com",
-//     status: "active",
-//     age: 36,
-//   },
-//   {
-//     id: 9,
-//     username: "Roxie",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "snow@gmail.com",
-//     status: "pending",
-//     age: 65,
-//   },
-//   {
-//     id: 10,
-//     username: "Roxie",
-//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-//     email: "snow@gmail.com",
-//     status: "active",
-//     age: 65,
-//   },
-// ];
-
-export const userRows = [
-  {
-    id: 1,
+    // id: 1,
     name: "Tea - Herbal Orange Spice",
     batch: "36-973-8105",
     productionDate: "11/8/2022",
@@ -148,7 +12,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 2,
+    // id: 2,
     name: "Corn Kernels - Frozen",
     batch: "30-117-3025",
     productionDate: "8/9/2023",
@@ -158,7 +22,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 3,
+    // id: 3,
     name: "Cheese - Mix",
     batch: "37-550-8470",
     productionDate: "1/30/2023",
@@ -168,7 +32,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 4,
+    // id: 4,
     name: "Fond - Neutral",
     batch: "12-778-1273",
     productionDate: "9/24/2023",
@@ -178,7 +42,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 5,
+    // id: 5,
     name: "Lamb Rack Frenched Australian",
     batch: "17-435-3878",
     productionDate: "11/28/2022",
@@ -188,7 +52,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 6,
+    // id: 6,
     name: "Oven Mitt - 13 Inch",
     batch: "40-680-2177",
     productionDate: "10/10/2023",
@@ -198,7 +62,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 7,
+    // id: 7,
     name: "Beer - Blue",
     batch: "98-991-9508",
     productionDate: "1/13/2023",
@@ -208,7 +72,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 8,
+    // id: 8,
     name: "Muffin - Banana Nut Individual",
     batch: "72-438-5742",
     productionDate: "5/26/2023",
@@ -218,7 +82,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 9,
+    // id: 9,
     name: "Bok Choy - Baby",
     batch: "83-718-8210",
     productionDate: "12/10/2022",
@@ -228,7 +92,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 10,
+    // id: 10,
     name: "Mountain Dew",
     batch: "11-709-1511",
     productionDate: "9/8/2023",
@@ -238,7 +102,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 11,
+    // id: 11,
     name: "Scallops - 20/30",
     batch: "02-427-4301",
     productionDate: "9/10/2023",
@@ -248,7 +112,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 12,
+    // id: 12,
     name: "Chicken - Tenderloin",
     batch: "90-939-4998",
     productionDate: "9/19/2023",
@@ -258,7 +122,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 13,
+    // id: 13,
     name: "Pork - Butt, Boneless",
     batch: "29-342-5121",
     productionDate: "10/20/2023",
@@ -268,7 +132,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 14,
+    // id: 14,
     name: "Crab - Back Fin Meat, Canned",
     batch: "61-580-0822",
     productionDate: "3/15/2023",
@@ -278,7 +142,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 15,
+    // id: 15,
     name: "Lobak",
     batch: "21-995-5302",
     productionDate: "7/22/2023",
@@ -288,7 +152,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 16,
+    // id: 16,
     name: "Onions Granulated",
     batch: "77-875-6437",
     productionDate: "7/18/2023",
@@ -298,7 +162,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 17,
+    // id: 17,
     name: "Wine - Beaujolais Villages",
     batch: "38-406-9131",
     productionDate: "10/6/2023",
@@ -308,7 +172,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 18,
+    // id: 18,
     name: "Sesame Seed",
     batch: "63-706-5399",
     productionDate: "2/2/2023",
@@ -318,7 +182,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 19,
+    // id: 19,
     name: "Beef - Bones, Marrow",
     batch: "34-232-4513",
     productionDate: "2/18/2023",
@@ -328,7 +192,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 20,
+    // id: 20,
     name: "Muffin Orange Individual",
     batch: "36-976-3309",
     productionDate: "7/5/2023",
@@ -338,7 +202,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 21,
+    // id: 21,
     name: "Stock - Fish",
     batch: "22-274-4653",
     productionDate: "9/26/2023",
@@ -348,7 +212,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 22,
+    // id: 22,
     name: "Pails With Lids",
     batch: "20-994-7300",
     productionDate: "5/9/2023",
@@ -358,7 +222,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 23,
+    // id: 23,
     name: "Apple - Fuji",
     batch: "44-227-8787",
     productionDate: "1/10/2023",
@@ -368,7 +232,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 24,
+    // id: 24,
     name: "Milk - Chocolate 250 Ml",
     batch: "86-313-2103",
     productionDate: "7/2/2023",
@@ -378,7 +242,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 25,
+    // id: 25,
     name: "Fish - Bones",
     batch: "33-721-4068",
     productionDate: "6/15/2023",
@@ -388,7 +252,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 26,
+    // id: 26,
     name: "Tarragon - Fresh",
     batch: "05-030-8415",
     productionDate: "7/26/2023",
@@ -398,7 +262,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 27,
+    // id: 27,
     name: "Bread - Rye",
     batch: "08-101-5106",
     productionDate: "1/30/2023",
@@ -408,7 +272,7 @@ export const userRows = [
     status: "pending",
   },
   {
-    id: 28,
+    // id: 28,
     name: "Veal - Leg",
     batch: "87-042-5158",
     productionDate: "6/30/2023",
@@ -418,7 +282,7 @@ export const userRows = [
     status: "expired",
   },
   {
-    id: 29,
+    // id: 29,
     name: "Chilli Paste, Ginger Garlic",
     batch: "67-142-9668",
     productionDate: "2/21/2023",
@@ -428,7 +292,7 @@ export const userRows = [
     status: "active",
   },
   {
-    id: 30,
+    // id: 30,
     name: "Venison - Denver Leg Boneless",
     batch: "47-638-8380",
     productionDate: "6/17/2023",
@@ -438,3 +302,33 @@ export const userRows = [
     status: "pending",
   },
 ];
+const populate = async () => {
+  const data = userRows.map((x) => {
+    const { name, batch, productionDate, expiry, quantity, price } = x;
+    return {
+      product_name: name,
+      expiry_date: expiry,
+      batch_number: batch,
+      quantity,
+      production_date: productionDate,
+      price,
+    };
+  });
+  const userId = "T8BIkch6mQdQxh4rH34F9soGCrH2"; // Replace 'your_user_id' with the actual user ID
+
+  // Loop through each object in the data array
+  for (const product of data) {
+    try {
+      // Make a POST request for each product
+      await axios.post(
+        `https://xpiremider.onrender.com/api/products/${userId}`,
+        product
+      );
+      console.log("Posted:", product);
+    } catch (error) {
+      console.error("Error posting:", error);
+    }
+  }
+};
+
+populate();

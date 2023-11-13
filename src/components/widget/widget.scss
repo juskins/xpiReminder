@@ -1,5 +1,5 @@
- /* expiring in 7 days Widget */
- .exp-seven {
+/* expiring in 7 days Widget */
+.exp-seven {
   background-color: blue;
 }
 
@@ -10,7 +10,7 @@
 
 /* Expired already Widget */
 .expired {
-  background-color:darkred ;
+  background-color: darkred;
 }
 
 /* Total prod Widget */
@@ -25,10 +25,6 @@
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   border-radius: 10px;
   height: 100px;
-  
-
-
-
 
   .left,
   .right {
@@ -36,7 +32,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-  
 
     .title {
       font-weight: bold;
