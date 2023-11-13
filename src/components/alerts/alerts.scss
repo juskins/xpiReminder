@@ -1,29 +1,30 @@
 /* NotificationList.css */
+
 .notification-list {
-     width: 0;
-     height: 70%;
-     position: fixed;
-     top: 8%;
-     right: 0;
-     background-color: #fff;
      transition: width 0.3s;
-     overflow-y: auto;
-     z-index: 1;
+     position: fixed;
+     top: 50px;
+     right: 0;
+     width: 20%; /* Set your initial width here */
+     background-color: #fff; /* Adjust as needed */
      
-     p{
-          font-weight: 700;
-          color: black;
-          font-size: 18px;
-     }
-     small{
-          font-size:12px;
-     }
-     h3{
-          color: gray;
-     }
    }
    
    .notification-list.visible {
-     width: 250px; /* Adjust the width as needed */
+     animation: slideOut 0.3s ease-out; /* Set the animation duration and easing */
+     right: -30%; /* Adjust to match the initial width */
+   }
+   
+   @keyframes slideOut {
+     from {
+       right: 0;
+     }
+     to {
+       right: -30%;
+     }
+   }
+   
+   ::-webkit-scrollbar {
+     width: 5px;
    }
    

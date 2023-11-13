@@ -1,167 +1,4 @@
-import "./signup.scss";
-import logo from "../../assets/logo.svg";
-import React, { useState, useRef, useEffect } from "react";
-import { FaCheck, FaTimes, FaInfoCircle } from "react-icons/fa";
-import axios from "axios"
-
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-const REGISTER_URL = 'https://xpiremider.onrender.com/api/auth/signup';
-
-
-const Signup = () => {
-  const userFirstNameRef = useRef();
-  const userLastNameRef = useRef();
-  const errRef = useRef();
-
-  const [userFirstName, setUserFirstName] = useState("");
-
-  const [validFirstName, setValidFirstName] = useState(false);
-  const [userFocusFirstName, setUserFocusFirstName] = useState(false);
-
-  const [userLastName, setUserLastName] = useState("");
-  const [validLastName, setValidLastName] = useState(false);
-  const [userFocusLastName, setUserFocusLastName] = useState(false);
-
-  const [shopName, setShopName] = useState("");
-  const [validShopName, setValidShopName] = useState(false);
-  const [shopNameFocus, setShopNameFocus] = useState(false);
-
-  const [email, setEmail] = useState("");
-  const [validEmail, setValidEmail] = useState(false);
-  const [emailFocus, setEmailFocus] = useState(false);
-
-  const [pwd, setPwd] = useState("");
-  const [validPwd, setValidPwd] = useState(false);
-  const [pwdFocus, setPwdFocus] = useState(false);
-
-  const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
-  useEffect(() => {
-    userFirstNameRef.current.focus();
-  }, []);
-
-  useEffect(() => {
-    const result = USER_REGEX.test(userFirstName);
-    console.log(result);
-    console.log(userFirstName);
-    setValidFirstName(result);
-  }, [userFirstName]);
-
-  useEffect(() => {
-    const result = USER_REGEX.test(userLastName);
-    console.log(result);
-    console.log(userLastName);
-    setValidLastName(result);
-  }, [userLastName]);
-
-  useEffect(() => {
-    const result = USER_REGEX.test(shopName);
-    console.log(result);
-    console.log(shopName);
-    setValidShopName(result);
-  }, [shopName]);
-
-  useEffect(() => {
-    const result = PWD_REGEX.test(pwd);
-    console.log(result);
-    console.log(pwd);
-    setValidPwd(result);
-  }, [pwd]);
-
-  useEffect(() => {
-    const result = EMAIL_REGEX.test(email);
-    console.log(result);
-    console.log(email);
-    setValidEmail(result);
-  }, [email]);
-
-  useEffect(() => {
-    setErrMsg("");
-  }, [userFirstName, pwd, userLastName, shopName, email]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // if button enabled with JS hack
-    const v1 = USER_REGEX.test(userFirstName);
-    const v2 = USER_REGEX.test(userLastName);
-    const v3 = PWD_REGEX.test(pwd);
-    const v4 = USER_REGEX.test(shopName);
-    const v5 = EMAIL_REGEX.test(email);
-    if (!v1 || !v2 || !v3 || !v4 || !v5) {
-      setErrMsg("Invalid Entry");
-      return;
-    }
-   try {
-    const response = await axios.post(
-REGISTER_URL,JSON.stringify({
-  firstname: userFirstName,
-  lastname: userLastName,
-  password: pwd,
-  email: email,
-  shop_name:shopName
-
-}),
-{
-  headers: { 'Content-Type': 'application/json' },
-
-}
-    )
-    console.log(response?.data);
-    console.log(response?.accessToken);
-    console.log(JSON.stringify(response))
-    setSuccess(true);
-   } catch (err) {
-    if (!err?.response) {
-      setErrMsg('No Server Response');
-  } else if (err.response?.status === 409) {
-      setErrMsg('Username Taken');
-  }else if (err.response?.status === 400) {
-    setErrMsg('This Email Is Already In Use');
-} 
-  else {
-      setErrMsg('Registration Failed')
-  }
-  errRef.current.focus();
-   }
-  };
-
-  return (
-    <div className="body">
-      {success ? (
-        <section>
-          <h1>Success!</h1>
-          <p>
-            <a href="#">Sign In</a>
-          </p>
-        </section>
-      ) : (
-        <div className="card">
-          <div className="left">
-            <div className="flex mb-8 items-center justify-center">
-              <img src={logo} alt="logo" className="h-20 w-20" />
-              <h2 className="text-3xl text-[#131a4e] font-bold">
-                expiReminder
-              </h2>
-            </div>
-            <h1>Welcome to ExpiReminder: Your Expiration Date Guardian</h1>
-            <p>
-              Unlock a world of proactive product safety and expiration tracking
-              with ExpiReminder. At ExpiReminder, we understand the importance
-              of keeping your products safe, your family healthy, and your
-              business efficient.
-            </p>
-            <h1>Why Register with ExpiReminder?</h1>
-            <p>
-              ExpiReminder is more than just a tool; it's your guardian against
-              waste and safety risks. By registering with us, you gain exclusive
-              access to a range of features designed to make your life easier
-              and safer:
-            </p>
-          </div>
-
-          <form action="" onSubmit={handleSubmit}>
+       <form action="" onSubmit={handleSubmit}>
             <p
               ref={errRef}
               className={errMsg ? "errmsg" : "offscreen"}
@@ -382,10 +219,72 @@ REGISTER_URL,JSON.stringify({
               commitment to your privacy and data security is unwavering.
             </small>
           </form>
+
+
+          // NotificationList.js
+import React from "react";
+import "./alerts.scss"; // Add CSS for styling
+import warning from "../../assets/warning.png";
+
+const NotificationList = ({ isVisible, toggleVisibility }) => {
+  return (
+    <div
+      className={` absolute right-0 border-[0.5px] bg-white border-[#000] overflow-y-scroll w-[23%] mt-[45%] h-[70vh]  ${
+        isVisible ? "visible" : ""
+      }`}
+    >
+      <div className="border-b-[0.5px] border-[#000] p-4">
+        <div className="flex items-center gap-3 text-xs">
+          <img src={warning} alt="warning" />
+          <h5 className="font-poppins text-[#5E5454]">Expiry date tracker</h5>
         </div>
-      )}
+        <div>
+          <h5 className="mt-3 font-semibold text-[#5E5454]">1 item will expire in 3 days.</h5>
+          <h5 className="text-[13px] mt-2 text-[#5E5454]">Peak Milk will expire in 3 days</h5>
+        </div>
+      </div>
+      <div className="border-b-[1px] border-[#000] p-4">
+        <div className="flex items-center gap-3 text-xs">
+          <img src={warning} alt="warning" />
+          <h5 className="font-poppins ">Expiry date tracker</h5>
+        </div>
+        <div>
+          <h5 className="mt-3 font-semibold ">1 item will expire in 3 days.</h5>
+          <h5 className="text-[13px] mt-2">Peak Milk will expire in 3 days</h5>
+        </div>
+      </div>
+      <div className="border-b-[1px] border-[#000] p-4">
+        <div className="flex items-center gap-3 text-xs">
+          <img src={warning} alt="warning" />
+          <h5 className="font-poppins ">Expiry date tracker</h5>
+        </div>
+        <div>
+          <h5 className="mt-3 font-semibold ">1 item will expire in 3 days.</h5>
+          <h5 className="text-[13px] mt-2">Peak Milk will expire in 3 days</h5>
+        </div>
+      </div>
+      <div className="border-b-[1px] border-[#000] p-4">
+        <div className="flex items-center gap-3 text-xs">
+          <img src={warning} alt="warning" />
+          <h5 className="font-poppins ">Expiry date tracker</h5>
+        </div>
+        <div>
+          <h5 className="mt-3 font-semibold ">1 item will expire in 3 days.</h5>
+          <h5 className="text-[13px] mt-2">Peak Milk will expire in 3 days</h5>
+        </div>
+      </div>
+      <div className="border-b-[1px] border-[#000] p-4">
+        <div className="flex items-center gap-3 text-xs">
+          <img src={warning} alt="warning" />
+          <h5 className="font-poppins ">Expiry date tracker</h5>
+        </div>
+        <div>
+          <h5 className="mt-3 font-semibold ">1 item will expire in 3 days.</h5>
+          <h5 className="text-[13px] mt-2">Peak Milk will expire in 3 days</h5>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Signup;
+export default NotificationList;

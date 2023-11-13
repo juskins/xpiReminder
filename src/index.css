@@ -1,29 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-     font-family: 'Poppins';
-     src: url('../src/assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-     font-weight: normal;
-     font-style: normal;
-     }
- 
-     @font-face {
-     font-family: 'Poppins';
-     src: url('../src/assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
-     font-weight: bold;
-     font-style: normal;
-    }
-    .instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
-}
 
 .instructions > svg {
     margin-right: 0.25rem;

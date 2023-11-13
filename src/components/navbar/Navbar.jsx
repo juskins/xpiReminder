@@ -12,7 +12,7 @@ import { useState, useContext } from "react";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
-  const [showNotifications, setShowNotifications] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(true);
 
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
@@ -57,6 +57,7 @@ const Navbar = () => {
         </div>
       </div>
       <NotificationList
+      
         isVisible={showNotifications}
         toggleVisibility={toggleNotifications}
       />
